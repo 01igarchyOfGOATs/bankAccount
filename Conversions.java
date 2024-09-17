@@ -86,7 +86,7 @@ public class Conversions
                 System.out.println("Enter inches: ");
                 double inches = keyboard.nextDouble();
                 keyboard.nextLine();
-                double feet = (inches*12);
+                double feet = (inches/12);
                 System.out.println(feet + " feet");
             }
             if (selection == 8)
@@ -94,7 +94,7 @@ public class Conversions
                 System.out.println("Enter feet: ");
                 double feet = keyboard.nextDouble();
                 keyboard.nextLine();
-                double inches = (feet/12);
+                double inches = (feet*12);
                 System.out.println(inches + " inches");
             }
             if (selection == 9)
