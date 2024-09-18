@@ -46,7 +46,7 @@ public class Conversions
                 System.out.println("Enter fahrenheit: ");
                 double fahrenheit = keyboard.nextDouble();
                 keyboard.nextLine();
-                double celsius = (fahrenheit / 1.8) - 32;
+                double celsius = (fahrenheit - 32) / 1.8;
                 System.out.println(celsius + " celsius");
             }
             if (selection == 3)
