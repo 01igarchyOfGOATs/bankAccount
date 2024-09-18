@@ -9,7 +9,9 @@ public class Conversions
 {
     public static void main(String[] args)
     {
-        try (Scanner keyboard = new Scanner(System.in)) {
+        Scanner keyboard = new Scanner(System.in);
+        while(true)
+        {
             System.out.println("1. Celsius to fahrenheit");
             System.out.println("2. Fahrenheit to celsius");
             System.out.println("3. Feet to meters");
@@ -32,7 +34,7 @@ public class Conversions
             
             int selection = keyboard.nextInt();
             keyboard.nextLine();  //go past the endline and be ready for more input
-            
+
             if (selection == 1)
             {
                 System.out.println("Enter celsius: ");
@@ -161,6 +163,12 @@ public class Conversions
                 double seconds = (minutes*60);
                 System.out.println(seconds + "s econds");
             }
+            if (selection == 0)
+            {
+                break;
             }
+        
+        }
         }
     }
+
