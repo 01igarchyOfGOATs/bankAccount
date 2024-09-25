@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class Test
+{
+   private static double balance;
+
+public static void main(String[] args)
+    {
+        try(Scanner keyboard = new Scanner(System.in))
+        {
+            int selection = -1;
+            BankAccount userAccount = null;
+        while (true)
+        {
+            if (selection==-1)
+            { 
+            System.out.println("Create your bank account press 1 to begin");
+            selection = keyboard.nextInt(); //if int selection already exists, I don't need to put another int selection
+            keyboard.nextLine();
+            }
+            if (selection == 1)
+            {
+                System.out.println("type a username");
+                String userName = keyboard.nextLine();
+                System.out.println(userName + " is your username");
+                System.out.println("now choose your password");
+                String passWord = keyboard.nextLine();
+                System.out.println(passWord + " is now your password");
+                System.out.println("Welcome to your bank account! Your current balance is at 0. Select 2 to deposit, select 3 if not.");
+                selection = keyboard.nextInt();
+                keyboard.nextLine();
+                userAccount = new BankAccount(userName, 12345, 0.0, passWord);
+            }
+
+            if (selection == 2)
+            {
+                System.out.println("How much do you want to deposit?");
+                double deposit = keyboard.nextDouble();
+                keyboard.nextLine();
+                userAccount.deposit(deposit);
+                System.out.println("now " + userAccount + " is your Balance. Is there anything you want to withdraw? Press 3 if not, press 4 if yes.");
+                selection = keyboard.nextInt();
+                keyboard.nextLine();
+            }
+            if (selection == 3)
+            {
+                System.out.println("You are all set now! Click 5 to logout. Unless you still wanna do something more, press 2 or 4");
+                selection = keyboard.nextInt();
+            }
+
+            if (selection == 4)
+            {
+                System.out.println("Then how much do you want to withdraw?");
+                double withdrawal = keyboard.nextDouble();
+                keyboard.nextLine();
+                userAccount.withdrawal(withdrawal);
+                System.out.println("now " + userAccount + " is your Balance.");
+                System.out.println("Now press 3 finish.");
+                selection = keyboard.nextInt();
+                keyboard.nextLine();
+            }
+            
+            if (selection == 5)
+            {
+                break;
+            } 
+        }
+}
+}
+}
