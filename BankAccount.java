@@ -1,3 +1,5 @@
+//Make sure to add stuff or else it won't cause errors but it won't have use 
+
 public class BankAccount {
 private String name;
 private int accountNum;
@@ -24,7 +26,7 @@ public boolean loggedIn (String name, String password)
     return loggedIn;
 }
 
-public void logOut ()
+public void logOut () 
 {
     loggedIn = false; 
 }
@@ -55,9 +57,11 @@ public void deposit (double amountToAdd)
 
 public void withdrawal (double amountToSubtract)
 {
-    if (loggedIn == false)
-        throw new IllegalStateException("Not Logged in."); //causes code to not continue in IllegalStateException
     balance -= amountToSubtract;
+    if (loggedIn)
+    throw new IllegalStateException("Not Logged in."); //causes code to not continue (IllegalStateException)
 }
 
 }
+
+//Different files of the same package work together
