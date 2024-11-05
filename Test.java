@@ -28,7 +28,7 @@ public static void main(String[] args)
                 System.out.println("Welcome to your bank account! Your current balance is at 0. Select 2 to deposit, select 3 if not.");
                 selection = keyboard.nextInt();
                 keyboard.nextLine();
-                userAccount = new BankAccount(userName, 12345, 0.0, passWord);
+                userAccount = new BankAccount(userName, (int)(Math.random()*100000), 0.0, passWord);
                 userAccount.loggedIn(userName, passWord);
             }
 
@@ -70,10 +70,9 @@ public static void main(String[] args)
             if(selection == 6){
                 System.out.println("enter your username");
                 String userName = keyboard.next();
-                userAccount.loggedIn(userName, userName);
                 System.out.println("enter your password");
                 String passWord = keyboard.next();
-                userAccount.loggedIn(passWord, passWord);
+                userAccount.loggedIn(userName, passWord);
                 System.out.println("you have logged in, press 2 to continue, 3 to logoff, 4 to withdraw");
                 selection = keyboard.nextInt();
                 keyboard.nextLine();
