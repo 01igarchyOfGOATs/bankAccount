@@ -22,11 +22,15 @@ public boolean loggedIn (String name, String password)
     {
         loggedIn = true;
     }
+    else
+    {
+        loggedIn = false;
+    }
 
     return loggedIn;
 }
 
-public void logOut () 
+public void logOut() 
 {
     loggedIn = false; 
 }
@@ -50,18 +54,20 @@ public int setNum (int accountnum)
 
 public void deposit (double amountToAdd)
 {
-    balance += amountToAdd;
     if (loggedIn)
+    balance += amountToAdd;
+    else
     throw new IllegalStateException("Not Logged in.");
 }
 
 public void withdrawal (double amountToSubtract)
 {
-    balance -= amountToSubtract;
     if (loggedIn)
+    balance -= amountToSubtract;
+    else
     throw new IllegalStateException("Not Logged in."); //causes code to not continue (IllegalStateException)
 }
 
 }
 
-//Different files of the same package work together
+//Different files of the same package (folder) work together

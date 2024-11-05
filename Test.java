@@ -8,7 +8,7 @@ public static void main(String[] args)
         try(Scanner keyboard = new Scanner(System.in))
         {
             int selection = -1;
-            BankAccount userAccount = null;
+            BankAccount userAccount = null; //null shows object useraccount refers to nothing 
         while (true)
         {
             if (selection==-1)
@@ -29,6 +29,7 @@ public static void main(String[] args)
                 selection = keyboard.nextInt();
                 keyboard.nextLine();
                 userAccount = new BankAccount(userName, 12345, 0.0, passWord);
+                userAccount.loggedIn(userName, passWord);
             }
 
             if (selection == 2)
@@ -61,8 +62,23 @@ public static void main(String[] args)
             
             if (selection == 5)
             {
-                break;
+                System.out.println("you have logged out, press six to log in again");
+                userAccount.logOut();
+                selection = keyboard.nextInt();
+                keyboard.nextLine();
             } 
+            if(selection == 6){
+                System.out.println("enter your username");
+                String userName = keyboard.next();
+                userAccount.loggedIn(userName, userName);
+                System.out.println("enter your password");
+                String passWord = keyboard.next();
+                userAccount.loggedIn(passWord, passWord);
+                System.out.println("you have logged in, press 2 to continue, 3 to logoff, 4 to withdraw");
+                selection = keyboard.nextInt();
+                keyboard.nextLine();
+                
+            }
         }
 }
 }
