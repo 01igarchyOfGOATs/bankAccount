@@ -44,7 +44,7 @@ public double getBalance()
 
 public String toString()
 {
-    return accountNum + ":  balance = " + balance;
+    return accountNum + ": $" + balance;
 }
 
 public int setNum (int accountnum)
